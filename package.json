@@ -20,9 +20,12 @@
   },
   "homepage": "https://github.com/basir/amazona#readme",
   "devDependencies": {
+    "@types/jest": "^29.2.0",
+    "@types/supertest": "^2.0.12",
     "eslint": "^7.9.0",
     "eslint-plugin-react": "^7.21.2",
-    "nodemon": "^2.0.4"
+    "nodemon": "^2.0.4",
+    "ts-jest": "^29.0.3"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -36,5 +39,26 @@
     "multer": "^1.4.3",
     "socket.io": "^4.4.0",
     "supertest": "^6.3.1"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "transform": {
+      "^.+\\.(ts|tsx)$": "ts-jest"
+    },
+    "transformIgnorePatterns": [
+      "node_modules/(?!variables/.*)"
+    ],
+    "globals": {
+      "ts-jest": {
+        "tsConfigFile": "tsconfig.json"
+      }
+    },
+    "testMatch": [
+      "**/tests/*.+(ts|tsx|js)"
+    ]
   }
 }
